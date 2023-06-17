@@ -35,16 +35,7 @@ const Welcome = () => {
           transform: [{rotate: '180deg'}],
         }}
       />
-      {/* <Logo /> */}
-      <Image
-        source={require('../assets/logo2.png')}
-        style={{
-          width: 150,
-          height: 150,
-          top: -20,
-          left: -20,
-          position: 'absolute',
-        }}></Image>
+      <Logo />
 
       <Text style={{fontWeight: '800', fontSize: 13, marginTop: 50}}>
         Choose Your Prefernces

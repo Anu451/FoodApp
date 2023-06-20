@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
   StyleSheet,
   Text,
@@ -6,76 +6,101 @@ import {
   View,
   Image,
   TouchableOpacity,
+  KeyboardAvoidingView,
+  ScrollView,
 } from 'react-native';
 import Logo from '../components/Logo';
-import {COLOURS} from '../css/Global';
+import {COLOURS} from '../global/Css';
 import {UserIcon} from '@heroicons/react/outline';
 
 const Login = ({navigation}) => {
+  const [email, setEmail] = useState();
+  const [password, setPassword] = useState();
+  const [inputData, setInputData] = useState([]);
+  const handelEmailChange = value => {
+    setEmail(value);
+  };
+  const handelPasswordChange = value => {
+    setPassword(value);
+  };
+  const handelInputData = () => {
+    const data = {Email: email, Password: password};
+    setInputData([data]);
+    navigation.navigate('Home');
+  };
+  console.log(email);
+  console.log(password);
+  console.log(inputData, 'input');
   return (
-    <View
-      style={{
-        flex: 1,
-        position: 'relative',
-        backgroundColor: 'white',
-      }}>
-      {/* <View style={{alignItems: 'center'}}>
+    <ScrollView>
+      <View
+        style={{
+          flex: 1,
+          position: 'relative',
+          backgroundColor: 'white',
+        }}>
+        {/* <View style={{alignItems: 'center'}}>
         <Logo />
       </View> */}
-      <View style={styles.container}>
-        <Text style={styles.sen1}>Get your food</Text>
-        <Text style={styles.sen2}>Deliverd at your</Text>
-        <Text style={styles.sen3}>Door step</Text>
-        <View>
-          <Text style={styles.caption}>
-            We have 5000+ happy review and customers trust on our food and
-            delivery service
-          </Text>
-        </View>
-        <View style={styles.inputContainer}>
-          <View style={{width: '95%', alignItems: 'center'}}>
-            {/* <UserCircleIcon className="h-6 w-6 text-gray-500" /> */}
-            {/* <UserIcon className="h-6 w-6 text-gray-500" /> */}
-            <TextInput
-              style={styles.inputField}
-              placeholder="example@gmail.com"
-              placeholderTextColor={COLOURS.darkPurple}
-            />
-          </View>
-
-          <View style={{width: '95%', alignItems: 'center'}}>
-            <TextInput
-              style={styles.inputField}
-              placeholder="Password"
-              placeholderTextColor={COLOURS.darkPurple}
-              secureTextEntry={true}
-            />
-          </View>
-
-          <TouchableOpacity
-            style={{width: '90%', alignItems: 'flex-end', padding: 5}}
-            onPress={() => {
-              navigation.navigate('SignUp');
-            }}>
-            <Text style={{color: 'blue', fontWeight: '600'}}>
-              Don't have account ? Sign Up
+        <View style={styles.container}>
+          <Text style={styles.sen1}>Get your food</Text>
+          <Text style={styles.sen2}>Deliverd at your</Text>
+          <Text style={styles.sen3}>Door step</Text>
+          <View>
+            <Text style={styles.caption}>
+              We have 5000+ happy review and customers trust on our food and
+              delivery service
             </Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.loginBtn}>
-            <Text
-              style={{
-                color: 'white',
-                fontWeight: '600',
-                fontFamily: 'Poppins-SemiBold',
-                alignSelf: 'center',
+          </View>
+          <View style={styles.inputContainer}>
+            <View style={{width: '95%', alignItems: 'center'}}>
+              {/* <UserCircleIcon className="h-6 w-6 text-gray-500" /> */}
+              {/* <UserIcon className="h-6 w-6 text-gray-500" /> */}
+              <TextInput
+                style={styles.inputField}
+                placeholder="example@gmail.com"
+                placeholderTextColor={COLOURS.darkPurple}
+                value={email}
+                onChangeText={handelEmailChange}
+              />
+            </View>
+
+            <View style={{width: '95%', alignItems: 'center'}}>
+              <TextInput
+                style={styles.inputField}
+                placeholder="Password"
+                placeholderTextColor={COLOURS.darkPurple}
+                secureTextEntry={true}
+                value={password}
+                onChangeText={handelPasswordChange}
+              />
+            </View>
+            {/* 
+            <TouchableOpacity
+              style={{width: '90%', alignItems: 'flex-end', padding: 5}}
+              onPress={() => {
+                navigation.navigate('SignUp');
               }}>
-              Login
-            </Text>
-          </TouchableOpacity>
+              <Text style={{color: 'blue', fontWeight: '600'}}>
+                Don't have account ? Sign Up
+              </Text>
+            </TouchableOpacity> */}
+            <TouchableOpacity style={styles.loginBtn} onPress={handelInputData}>
+              <Text
+                style={{
+                  color: 'white',
+                  fontWeight: '600',
+                  fontFamily: 'Poppins-SemiBold',
+                  alignSelf: 'center',
+                }}>
+                Login
+              </Text>
+            </TouchableOpacity>
+          </View>
+          <Image source={require('../assets/bg.jpg')} style={styles.bg} />
         </View>
-        <Image source={require('../assets/bg.jpg')} style={styles.bg} />
       </View>
-    </View>
+    </ScrollView>
   );
 };
 

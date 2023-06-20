@@ -5,15 +5,16 @@ import {
   Image,
   ImageBackground,
   TouchableOpacity,
+  KeyboardAvoidingView,
 } from 'react-native';
 import Logo from '../components/Logo';
 import ButtonBlack from '../components/ButtonBlack';
-import {COLOURS} from '../css/Global';
+import {COLOURS} from '../global/Css';
 import {Colors} from 'react-native/Libraries/NewAppScreen';
 
 const Welcome = ({navigation}) => {
   return (
-    <View
+    <KeyboardAvoidingView
       style={{
         fontFamily: 'Poppins-Medium',
         position: 'relative',
@@ -82,7 +83,7 @@ const Welcome = ({navigation}) => {
           </Text>
         </TouchableOpacity>
       </View>
-    </View>
+    </KeyboardAvoidingView>
   );
 };
 

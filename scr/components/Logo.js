@@ -25,11 +25,11 @@ const Logo = () => {
       <Image
         source={require('../assets/logo2.png')}
         style={{
-          width: 150,
-          height: 150,
-          top: -20,
-          left: -20,
+          flex: 1,
           position: 'absolute',
+          width: 100,
+          height: 100,
+          zIndex: 1,
         }}></Image>
     </View>
   );

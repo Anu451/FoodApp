@@ -11,8 +11,9 @@ import {COLOURS} from '../global/Css';
 
 const SearchBar = () => {
   return (
-    <View style={styles.searchBar}>
+    <View>
       <TextInput
+        style={styles.searchBar}
         placeholder="Search Here"
         placeholderTextColor={COLOURS.darkPurple}
       />
@@ -22,9 +23,10 @@ const SearchBar = () => {
 
 const styles = StyleSheet.create({
   searchBar: {
-    elevation: 10,
-    shadowColor: 'grey',
-    shadowOffset: 5,
+    elevation: 5,
+    shadowColor: '#aaa',
+    shadowOffset: 2,
+    // shadowOpacity: 0.5,
     backgroundColor: 'white',
     width: '100%',
     alignSelf: 'center',

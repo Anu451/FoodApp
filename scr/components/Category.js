@@ -8,18 +8,29 @@ import {
 } from 'react-native';
 import categoryData from '../global/Data';
 const Category = () => {
+  const handelCategory = item => {
+    // console.log(e);
+    const targetCategory = item;
+    console.log(targetCategory);
+  };
   console.log('data', categoryData);
   const mapCategory = categoryData.map(item => {
     return (
       <View>
-        <TouchableOpacity>
-          <Text style={style.category}>{item.name}</Text>
+        <TouchableOpacity
+          style={style.category}
+          onPress={() => handelCategory(item.id)}
+          key={item.id}>
+          <Text>{item.name}</Text>
         </TouchableOpacity>
       </View>
     );
   });
   return (
-    <ScrollView style={style.container} horizontal={true}>
+    <ScrollView
+      style={style.container}
+      horizontal={true}
+      showsHorizontalScrollIndicator={false}>
       {mapCategory}
     </ScrollView>
   );
@@ -34,11 +45,14 @@ const style = StyleSheet.create({
     paddingHorizontal: 20,
     marginVertical: 15,
     paddingVertical: 6,
-    elevation: 10,
+    // elevation: 10,
     // shadowColor: 'grey',
     // shadowOffset: 5,
     backgroundColor: 'white',
     borderRadius: 15,
+    elevation: 10,
+    shadowColor: '#aaa',
+    shadowOffset: 2,
   },
 });
 

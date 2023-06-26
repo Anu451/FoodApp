@@ -19,13 +19,15 @@ const Home = () => {
 
       <SearchBar />
       <Category data={categoryData} />
+      <Text>working</Text>
       {/* <Category /> */}
     </View>
   );
 };
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    height: '100%',
+    // flex: 1,
     backgroundColor: '#fff',
     padding: 15,
   },

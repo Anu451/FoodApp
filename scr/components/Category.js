@@ -6,7 +6,8 @@ import {
   ScrollView,
   TouchableOpacity,
 } from 'react-native';
-import categoryData from '../global/Data';
+import {categoryData} from '../global/Data';
+import {COLOURS} from '../global/Css';
 const Category = () => {
   const handelCategory = item => {
     // console.log(e);
@@ -21,7 +22,13 @@ const Category = () => {
           style={style.category}
           onPress={() => handelCategory(item.id)}
           key={item.id}>
-          <Text>{item.name}</Text>
+          <Text
+            style={{
+              fontFamily: COLOURS.medium,
+              fontSize: 12,
+            }}>
+            {item.name}
+          </Text>
         </TouchableOpacity>
       </View>
     );
@@ -53,6 +60,7 @@ const style = StyleSheet.create({
     elevation: 10,
     shadowColor: '#aaa',
     shadowOffset: 2,
+    fontFamily: COLOURS.medium,
   },
 });
 

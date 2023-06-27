@@ -33,6 +33,9 @@ const styles = StyleSheet.create({
     paddingLeft: 20,
     borderRadius: 20,
     marginTop: 10,
+    color: COLOURS.darkPurple,
+    fontSize: 16,
+    fontFamily: COLOURS.regular,
   },
 });
 export default SearchBar;

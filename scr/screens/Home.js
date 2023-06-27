@@ -1,32 +1,37 @@
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {View, Text, StyleSheet, ScrollView} from 'react-native';
 import Logo from '../components/Logo';
 import SearchBar from '../components/SearchBar';
 import Loaction from '../components/Location';
 import Profile from '../components/Profile';
 import Category from '../components/Category';
 import categoryData from '../global/Data';
+import NavBar from '../components/NavBar';
+import {COLOURS} from '../global/Css';
+import Recommended from '../components/Recommended';
+import Carousel from '../components/Carousel';
+// import {categoryData, RecommendedData} from '../global/Data';
 
 const Home = () => {
   // console.log(categoryData);
   return (
-    <View style={styles.container}>
-      {/* <Text>Home</Text> */}
-      <View style={styles.header}>
-        <Loaction />
-        <Profile />
-      </View>
+    <ScrollView>
+      <View style={styles.container}>
+        <View style={styles.header}>
+          <Loaction />
+          <Profile />
+        </View>
 
-      <SearchBar />
-      <Category data={categoryData} />
-      <Text>working</Text>
-      {/* <Category /> */}
-    </View>
+        <SearchBar />
+        <Category data={categoryData} />
+        <Carousel />
+        <Recommended />
+      </View>
+    </ScrollView>
   );
 };
 const styles = StyleSheet.create({
   container: {
-    height: '100%',
     // flex: 1,
     backgroundColor: '#fff',
     padding: 15,

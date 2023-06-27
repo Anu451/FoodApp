@@ -17,4 +17,4 @@ const categoryData = [
   },
 ];
 
-export default categoryData;
+export {categoryData};

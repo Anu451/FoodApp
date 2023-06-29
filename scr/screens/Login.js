@@ -12,6 +12,7 @@ import {
 import Logo from '../components/Logo';
 import {COLOURS} from '../global/Css';
 import {UserIcon} from '@heroicons/react/outline';
+import HomeScreen from './MoneyScreen';
 
 const Login = ({navigation}) => {
   const [email, setEmail] = useState();
@@ -26,13 +27,13 @@ const Login = ({navigation}) => {
   const handelInputData = () => {
     const data = {Email: email, Password: password};
     setInputData([data]);
-    navigation.navigate('Home');
+    navigation.navigate('BottomNavigation');
   };
   console.log(email);
   console.log(password);
   console.log(inputData, 'input');
   return (
-    <ScrollView>
+    <ScrollView style={{flex: 1}}>
       <View
         style={{
           flex: 1,
@@ -144,6 +145,8 @@ const styles = StyleSheet.create({
     width: 400,
     height: 400,
     position: 'relative',
+    justifyContent: 'center',
+    alignSelf: 'center',
     // bottom: -80,
     opacity: 0.4,
   },

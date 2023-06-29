@@ -6,8 +6,26 @@ import {
   ScrollView,
   TouchableOpacity,
 } from 'react-native';
-import {categoryData} from '../global/Data';
 import {COLOURS} from '../global/Css';
+
+const categoryData = [
+  {
+    id: 1,
+    name: 'South Indian',
+  },
+  {
+    id: 2,
+    name: 'North Indian',
+  },
+  {
+    id: 3,
+    name: 'Deserts',
+  },
+  {
+    id: 4,
+    name: 'IceCream',
+  },
+];
 const Category = () => {
   const handelCategory = item => {
     // console.log(e);

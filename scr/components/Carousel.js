@@ -9,19 +9,19 @@ const Carousel = () => {
       <Swiper loop={true} autoplay={true} autoplayTimeout={3}>
         <View>
           <Image
-            source={require('../assets/banner1.png')}
+            source={require('../assets/banner1.jpg')}
             style={styles.slider}
           />
         </View>
         <View>
           <Image
-            source={require('../assets/banner2.png')}
+            source={require('../assets/banner2.jpg')}
             style={styles.slider}
           />
         </View>
         <View>
           <Image
-            source={require('../assets/banner3.png')}
+            source={require('../assets/banner3.jpg')}
             style={styles.slider}
           />
         </View>
